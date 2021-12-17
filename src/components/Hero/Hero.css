@@ -1,0 +1,242 @@
+:root {
+  --black-color: #000;
+  --white-color: #fff;
+  --gray-color: #bab9b9;
+  --section-border-color: rgba(186, 185, 185, 0.49);
+  --section-1-color: #95bc00;
+  --section-2-color: #f34e4e;
+  --section-3-color: #ffd745;
+  --section-4-color: #008fc0;
+  --cubic-animation: cubic-bezier(0.52, 0.19, 0.14, 0.96);
+}
+
+.hero {
+  position: relative;
+  padding-top: 55px;
+  overflow: hidden;
+  background: #332e4c;
+}
+
+#heroVideo {
+  position: absolute;
+  top: -2500px;
+  min-width: 100%;
+  min-height: 100%;
+  opacity: 0.5;
+}
+
+.hero .container_for_slider {
+  padding: 10px;
+  background: #332e4c;
+}
+
+button.slick-prev:before,
+button.slick-next:before {
+  content: '';
+}
+
+button.slick-prev,
+button.slick-next {
+  width: 55px;
+  height: 55px;
+  z-index: 5;
+
+  background-image: url('./data/left_arrow.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+
+  transition: all 200ms linear;
+  transform: translate(0, 50%);
+}
+
+button.slick-prev {
+  left: 0;
+}
+
+button.slick-prev:hover,
+button.slick-prev:focus {
+  background-image: url('./data/left_arrow.svg');
+
+  /* transform: scale(1.2); */
+}
+
+button.slick-next {
+  right: 0;
+  background-image: url('./data/right_arrow.svg');
+}
+
+button.slick-next:hover,
+button.slick-next:focus {
+  background-image: url('./data/right_arrow.svg');
+
+  /* transform: scale(1.2); */
+}
+
+.container_for_slider .slick-dots {
+  bottom: 0;
+}
+
+.container_for_slider .slick-dots li.slick-active button:before,
+.container_for_slider .slick-dots li button:before {
+  color: #fff;
+}
+
+.hero.hero_slider_item {
+  padding: 10px;
+
+  /* тут можно задать высоту елемента слайдера */
+}
+
+.hero_slider_item h2,
+.hero_slider_item h4 {
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+}
+.hero_slider_item h2 {
+  font-family: 'Cormorant', serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 1.22;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.hero_slider_item h4 {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 1.16;
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+
+.hero_cart_container {
+  position: relative;
+  min-width: 252px;
+  min-height: 76px;
+  padding: 20px;
+  border: 1px solid #fff;
+  background: rgba(255, 255, 255, 0.5);
+
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 13px;
+}
+
+.hero_cart_container h4 {
+  width: calc(100% - 74px);
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+  text-align: left;
+  color: #fff;
+}
+
+.hero-cart-list {
+  display: none;
+  font-size: 11px;
+  color: #fff;
+  padding-left: 5px;
+  border-top: 1px solid #fff;
+  list-style-type: square;
+}
+
+.hero-cart-list li {
+  margin: 10px;
+}
+
+.hero_cart_container .cart-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 74px;
+  height: 74px;
+  background-color: #fff;
+}
+
+.slider_image {
+  min-width: 252px;
+  min-height: 300px;
+  background-image: url('./data/image_1_slider.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: -50px;
+}
+
+/* -------------------------------------- адаптив на странице */
+@media (min-width: 1024px) {
+  .hero_slider_item {
+    padding-left: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+  .hero-item-heading {
+    width: 30%;
+  }
+  .hero_cart_container {
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    transform: translate(0, -50%);
+    width: 243px;
+    height: 243px;
+  }
+
+  .hero_cart_container .cart-icon {
+    top: auto;
+    bottom: 0;
+  }
+
+  .hero_slider_item h2,
+  .hero_slider_item h4 {
+    width: 100%;
+    text-align: left;
+    margin-top: 0;
+  }
+
+  .hero_slider_item h2 {
+    font-size: 48px;
+  }
+
+  .hero-cart-list {
+    display: block;
+  }
+
+  .slider_image {
+    min-width: 50%;
+    min-height: 550px;
+
+    background-size: cover;
+    background-position-y: 0;
+  }
+  .hero_cart_container .cart-icon {
+    width: 50px;
+    height: 50px;
+  }
+  .hero_cart_container .cart-icon svg {
+    width: 31px;
+  }
+
+  .hero button.slick-prev {
+    left: 30px;
+    top: 50px;
+  }
+  .hero button.slick-next {
+    left: 90px;
+    top: 50px;
+  }
+}
